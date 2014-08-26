@@ -1,98 +1,120 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Polymer Credit Card Form Element</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <!-- build:css styles/main.css -->
+    <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="stylesheets/reset.css">
+    <link rel="stylesheet" href="stylesheets/main.css">
+    <!-- endbuild-->
 
-    <title>Simplify Polymer Credit Card Form Element by oconnort</title>
-  </head>
+    <!-- Place your HTML imports here -->
+    <script src="javascripts/platform.js"></script>
+    <link rel="import" href="credit-card-form.html">
+    
+    <!-- App Scripts -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+    <script src="//google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+</head>
+<body unresolved ng-app="simplifyCCForm">
+    <div class="bg"></div>
+    <div class="wrapper" ng-controller="Controller">
+        <div class="info-container shadow rounded">
+            <img alt="avatar" class="avatar shadow" src="//avatars0.githubusercontent.com/u/522607?v=2&amp;s=460" />
+            <h1>Simplify Credit Card Element</h1>
+            <p class="sub-title">A simple credit card form powered by Simplify</p>
+            <a class="button" href="//github.com/oconnort/polymer-simplify-cc-form/archive/master.zip">Download the Source Code</a>
+            <div class="instructions">
+                <h3>Use the Element</h3>
+                <p>Import the element</p>
+                <code class="prettyprint rounded">
+                    &lt;link rel="import" href="elements/credit-card-form.html"&gt;
+                </code>
+                <p>Use the element</p>
+                <code class="prettyprint rounded">
+                    &lt;credit-card-form key="MY_PUBLIC_KEY" /&gt;
+                </code>
+                <p>Handle the response</p>
+                <pre class="prettyprint rounded">
+                
+    &lt;script&gt;<br/>
+        // Wait for 'polymer-ready'
+        window.addEventListener('polymer-ready', function(e) {
+            var ccForm = document.querySelector('credit-card-form');
 
-  <body>
-    <header>
-      <div class="inner">
-        <h1>Simplify Polymer Credit Card Form Element</h1>
-        <h2>This is a custom element that enables easy credit card payments with Simplify Commerce.</h2>
-        <a href="https://github.com/oconnort" class="button"><small>Follow me on</small>GitHub</a>
-      </div>
-    </header>
+            // listen to token response
+            ccForm.addEventListener('token-response', function(event) {
+                console.log(event.detail.token); // Extract the token value
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-          <h2>
-<a name="simplify-polymer-credit-card-form-element" class="anchor" href="#simplify-polymer-credit-card-form-element"><span class="octicon octicon-link"></span></a>Simplify Polymer Credit Card Form Element</h2>
-
-<p>This is a custom element that enables easy credit card payments with Simplify Commerce.</p>
-
-<p>Ref: <a href="http://www.simplify.com/commerce/docs">http://www.simplify.com/commerce/docs</a></p>
-
-<h4>
-<a name="demo-installation" class="anchor" href="#demo-installation"><span class="octicon octicon-link"></span></a>Demo Installation</h4>
-
-<p>Install the bower components</p>
-
-<div class="highlight highlight-javascript"><pre><span class="nx">bower</span> <span class="nx">install</span>
-</pre></div>
-
-<p>Install grunt</p>
-
-<pre><code>npm install
-</code></pre>
-
-<p>Run the app</p>
-
-<pre><code>grunt serve
-</code></pre>
-
-<h4>
-<a name="use-the-element" class="anchor" href="#use-the-element"><span class="octicon octicon-link"></span></a>Use the Element</h4>
-
-<p>Import the element</p>
-
-<div class="highlight highlight-html"><pre><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"import"</span> <span class="na">href=</span><span class="s">"elements/credit-card-form.html"</span><span class="nt">&gt;</span>
-</pre></div>
-
-<p>Use the element</p>
-
-<div class="highlight highlight-html"><pre><span class="nt">&lt;credit-card-form</span> <span class="na">key=</span><span class="s">"MY_PUBLIC_KEY"</span> <span class="nt">/&gt;</span>
-</pre></div>
-
-<p>Handle the response</p>
-
-<div class="highlight highlight-html"><pre><span class="nt">&lt;script&gt;</span>
-    <span class="c1">// Wait for 'polymer-ready'</span>
-    <span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'polymer-ready'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kd">var</span> <span class="nx">ccForm</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'credit-card-form'</span><span class="p">);</span>
-
-            <span class="c1">// listen to token response</span>
-        <span class="nx">ccForm</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'token-response'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">detail</span><span class="p">.</span><span class="nx">token</span><span class="p">);</span> <span class="c1">// Extract the token value</span>
-
-            <span class="c1">// Send token to the server to create the payment</span>
-            <span class="c1">// https://www.simplify.com/commerce/docs/apidoc/payment</span>
-        <span class="p">});</span>
-    <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span>    
-</pre></div>
-        </section>
-
-        <aside id="sidebar">
-
-
-          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
-        </aside>
-      </div>
+                // Send token to the server to create the payment
+            });
+        });
+    &lt;/script&gt;
+    
+                </pre>
+                <h3>Install this Demo</h3>
+                <p>Install the bower components</p>
+                <code class="prettyprint rounded">
+                    bower install
+                </code>
+                <p>Install grunt</p>
+                <code class="prettyprint rounded">
+                    npm install
+                </code>
+                <p>Run the app</p>
+                <code class="prettyprint rounded">
+                    grunt serve
+                </code>
+            </div>
+        </div>
+        <div class="card-container shadow rounded">
+            <credit-card-form key="sbpb_MjIwM2Y0NDQtY2IwYS00YWVhLTliNTUtNzZhOGM2YTYyNWU5" data-token-listener></credit-card-form>
+        </div>
+        <div class='token-holder'>
+            <div class='label'>Simplify Card Token</div>
+                <div class="token-wrapper shadow rounded">
+                    <div class='token'>
+                        <span ng-show='token'>{{token}}</span>
+                        <span ng-show='!token' class='italic'>SIMPLIFY_TOKEN</span>
+                    </div>        
+                </div>
+            </div>
+        </div>
     </div>
+<script>
+angular.module('simplifyCCForm', [])
+.controller('Controller', ['$scope', function($scope) {
+    $scope.token;
+}])
+.directive('tokenListener', function(){
+    return {
+        link: function($scope, iElm, iAttrs, controller) {
+            iElm.bind('token-response', function(event, data) {
+              $scope.$apply(function(){
+                console.log(event.originalEvent.detail.token);
+                $scope.token = event.originalEvent.detail.token;  
+            });
+          });    
+        }
+    };
+});
 
-  
-  </body>
+      // Wait for 'polymer-ready'. Ensures the element is upgraded.
+      // window.addEventListener('polymer-ready', function(e) {
+      //   var ccForm = document.querySelector('credit-card-form');
+
+      //   // Respond to events it fires.
+      //   ccForm.addEventListener('token-response', function(event) {
+      //     console.log(event.detail.token);
+      //   });
+
+      // });
+</script>
+</body>
 </html>
