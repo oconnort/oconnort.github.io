@@ -1,0 +1,100 @@
+/* html5doctor.com Reset v1.6.1 (http://html5doctor.com/html-5-reset-stylesheet/) - http://cssreset.com */
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+body{line-height:1}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+nav ul{list-style:none}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{content:none}
+a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent}
+ins{background-color:#ff9;color:#000;text-decoration:none}
+mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold}
+del{text-decoration:line-through}
+abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}
+table{border-collapse:collapse;border-spacing:0}
+hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}
+input,select{vertical-align:middle}
+
+/* App Styles */
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+    background: #333;
+    color: #fff;
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 120%;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 300;
+  margin: 25px 0;
+}
+
+a {
+  -moz-transition: all .25s ease-in;
+  -webkit-transition: all .25s ease-in;
+  transition: all .25s ease-in;
+  color: #fff;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #fff;
+}
+
+a:hover {
+  color: #FF003D;
+} 
+
+/* Classes */
+
+.highlight {
+  color: #FF003D;
+  margin: 0 10px;
+}
+
+.center-circle {
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+
+  -moz-box-shadow: 1px 1px 100px #F00;
+  -webkit-box-shadow: 1px 1px 100px #F00;
+  box-shadow: 1px 1px 100px #F00;
+
+  border: 5px solid #FF003D;
+  cursor: default;
+  height: 600px;
+  letter-spacing: 5px;
+  margin: 0 auto;
+  margin-top: 100px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 600px;  
+}
+
+.title {
+  -moz-transition: all .25s ease-in;
+  -webkit-transition: all .25s ease-in;
+  transition: all .25s ease-in;
+  font-size: 145px;
+  letter-spacing: 10px;
+  margin-top: 200px;
+}
+
+.title:hover {
+  -webkit-filter: blur(1px);
+}
