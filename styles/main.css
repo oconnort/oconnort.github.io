@@ -19,6 +19,11 @@ html {
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -76,25 +81,124 @@ a:hover {
   box-shadow: 1px 1px 100px #F00;
 
   border: 5px solid #FF003D;
-  cursor: default;
   height: 600px;
-  letter-spacing: 5px;
   margin: 0 auto;
   margin-top: 100px;
+  width: 600px;
+
+  -webkit-animation: pulse 2s linear 0s infinite alternate;
+     -moz-animation: pulse 2s linear 0s infinite alternate;
+       -o-animation: pulse 2s linear 0s infinite alternate;
+          animation: pulse 2s linear 0s infinite alternate;
+}
+
+.content {
+  left: 0;
+  position: absolute;
+  top: 275px;
+  width: 100%;
+}
+
+.inner-wrapper {
+  display: table-cell;
+  vertical-align: middle;
   text-align: center;
-  text-transform: uppercase;
-  width: 600px;  
+}
+
+.outer-wrapper {
+  display: table;
+  height: 100%;
+  width: 100%;
 }
 
 .title {
   -moz-transition: all .25s ease-in;
   -webkit-transition: all .25s ease-in;
   transition: all .25s ease-in;
-  font-size: 145px;
+  font-size: 118px;
   letter-spacing: 10px;
-  margin-top: 200px;
+
+  -webkit-animation: blur-pulse 2s linear 0s infinite alternate;
+     -moz-animation: blur-pulse 2s linear 0s infinite alternate;
+       -o-animation: blur-pulse 2s linear 0s infinite alternate;
+          animation: blur-pulse 2s linear 0s infinite alternate;
 }
 
-.title:hover {
-  -webkit-filter: blur(1px);
+.wrapper {
+  cursor: default;
+  letter-spacing: 5px;
+  margin: 0 auto;
+  text-align: center;
+  text-transform: uppercase;
+  width: 600px;  
+}
+
+@-webkit-keyframes pulse { from { -webkit-transform: scale(1);  } to { -webkit-transform: scale(.97); -webkit-box-shadow: 1px 1px 20px #F00; }  }
+   @-moz-keyframes pulse { from { -moz-transform: scale(1);     } to { -moz-transform: scale(.97); -moz-box-shadow: 1px 1px 20px #F00; }     }
+     @-o-keyframes pulse { from { -o-transform: scale(1);       } to { -o-transform: scale(.97); -o-box-shadow: 1px 1px 20px #F00; }       }
+        @keyframes pulse { from { transform: scale(1);          } to { transform: scale(.97); box-shadow: 1px 1px 20px #F00; }            }
+
+@-webkit-keyframes blur-pulse { from { -webkit-filter: blur(0);  } to { -webkit-filter: blur(2px); }  }
+   @-moz-keyframes blur-pulse { from { -moz-filter: blur(0);     } to { -moz-filter: blur(2px);  }     }
+     @-o-keyframes blur-pulse { from { -o-filter: blur(0);       } to { -o-filter: blur(2px);  }       }
+        @keyframes blur-pulse { from { filter: blur(0);          } to { filter: blur(2px);  }            }
+
+/* IPhone Portrait */
+@media screen and (max-width : 320px) {
+  h3 {
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin: 10px 0;
+    margin-top: 85px;
+  }
+
+  .center-circle {
+    height: 200px;
+    margin-top: 135px;
+    width: 200px;
+  }
+
+  .content {
+    font-size: 12px;
+    letter-spacing: 2px;
+    top: 215px;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+
+  .wrapper {
+    width: 100%;
+  }
+}
+
+/* IPhone Landscape */
+@media screen and (max-width : 568px) {
+  h3 {
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin: 10px 0;
+    margin-top: 85px;
+  }
+
+  .center-circle {
+    height: 200px;
+    margin-top: 35px;
+    width: 200px;
+  }
+
+  .content {
+    font-size: 12px;
+    letter-spacing: 2px;
+    top: 120px;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+
+  .wrapper {
+    width: 100%;
+  }
 }
