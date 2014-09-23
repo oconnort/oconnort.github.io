@@ -173,8 +173,8 @@ a:hover {
   }
 }
 
-/* IPhone Landscape */
-@media screen and (max-width : 568px) {
+/* Mobile Landscape */
+@media screen and (max-width : 640px) {
   h3 {
     font-size: 12px;
     letter-spacing: 2px;
