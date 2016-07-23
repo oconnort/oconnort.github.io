@@ -60,26 +60,21 @@ a:visited {
 }
 
 a:hover {
-  color: #FF003D;
+  color: #03a9f4;
 } 
 
 /* Classes */
 
 .highlight {
-  color: #FF003D;
+  color: #03a9f4;
   margin: 0 10px;
 }
 
 .center-circle {
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
   border-radius: 50%;
+  box-shadow: 1px 1px 100px #00bcd4;
 
-  -moz-box-shadow: 1px 1px 100px #F00;
-  -webkit-box-shadow: 1px 1px 100px #F00;
-  box-shadow: 1px 1px 100px #F00;
-
-  border: 5px solid #FF003D;
+  border: 5px solid #03a9f4;
   height: 600px;
   margin: 0 auto;
   margin-top: 100px;
@@ -111,8 +106,6 @@ a:hover {
 }
 
 .title {
-  -moz-transition: all .25s ease-in;
-  -webkit-transition: all .25s ease-in;
   transition: all .25s ease-in;
   font-size: 118px;
   letter-spacing: 10px;
@@ -132,10 +125,10 @@ a:hover {
   width: 600px;  
 }
 
-@-webkit-keyframes pulse { from { -webkit-transform: scale(1);  } to { -webkit-transform: scale(.97); -webkit-box-shadow: 1px 1px 20px #F00; }  }
-   @-moz-keyframes pulse { from { -moz-transform: scale(1);     } to { -moz-transform: scale(.97); -moz-box-shadow: 1px 1px 20px #F00; }     }
-     @-o-keyframes pulse { from { -o-transform: scale(1);       } to { -o-transform: scale(.97); -o-box-shadow: 1px 1px 20px #F00; }       }
-        @keyframes pulse { from { transform: scale(1);          } to { transform: scale(.97); box-shadow: 1px 1px 20px #F00; }            }
+@-webkit-keyframes pulse { from { -webkit-transform: scale(1);  } to { -webkit-transform: scale(.97); -webkit-box-shadow: 1px 1px 20px #00bcd4; }  }
+   @-moz-keyframes pulse { from { -moz-transform: scale(1);     } to { -moz-transform: scale(.97); -moz-box-shadow: 1px 1px 20px #00bcd4; }     }
+     @-o-keyframes pulse { from { -o-transform: scale(1);       } to { -o-transform: scale(.97); -o-box-shadow: 1px 1px 20px #00bcd4; }       }
+        @keyframes pulse { from { transform: scale(1);          } to { transform: scale(.97); box-shadow: 1px 1px 20px #00bcd4; }            }
 
 @-webkit-keyframes blur-pulse { from { -webkit-filter: blur(0);  } to { -webkit-filter: blur(2px); }  }
    @-moz-keyframes blur-pulse { from { -moz-filter: blur(0);     } to { -moz-filter: blur(2px);  }     }
