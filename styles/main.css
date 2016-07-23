@@ -93,6 +93,10 @@ a:hover {
   width: 100%;
 }
 
+.content_social {
+  margin-top: 50px;
+}
+
 .inner-wrapper {
   display: table-cell;
   vertical-align: middle;
