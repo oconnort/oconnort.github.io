@@ -20,6 +20,9 @@ html {
 }
 
 html, body {
+  font-family: 'Lato', sans-serif;
+  font-size: 12px;
+  font-weight: 300;
   height: 100%;
 }
 
@@ -27,18 +30,15 @@ html, body {
   box-sizing: inherit;
 }
 
-body {
-    background: #333;
-    color: #fff;
-    font-family: 'Lato', sans-serif;
-    font-size: 12px;
-    font-weight: 300;
+.body_dark {
+  background: #333;
+  color: #fff;  
 }
 
 h1 {
-    font-size: 32px;
-    font-weight: 300;
-    line-height: 120%;
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 120%;
 }
 
 h3 {
@@ -48,29 +48,57 @@ h3 {
 }
 
 a {
-  -moz-transition: all .25s ease-in;
-  -webkit-transition: all .25s ease-in;
   transition: all .25s ease-in;
-  color: #fff;
   text-decoration: none;
-}
-
-a:visited {
-  color: #fff;
 }
 
 a:hover {
   color: #03a9f4;
 } 
 
+ul {
+  list-style: none;
+}
+
+li {
+  padding: 10px 0;
+}
+
+section {
+  margin-bottom: 50px;
+}
+
 /* Classes */
+
+.nav_top {
+  background: rgba(0,0,0,0.8);
+  height: 50px;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;  
+  width: 100%;
+  z-index: 9999;  
+}
+
+.nav_offset {
+  padding-top: 100px;
+}
 
 .highlight {
   color: #03a9f4;
   margin: 0 10px;
 }
 
-.center-circle {
+.content_lnk {
+  color: white;
+}
+
+.content_lnk:visited {
+  color: #fff;
+}
+
+.circle {
   border-radius: 50%;
   box-shadow: 1px 1px 100px #00bcd4;
 
@@ -81,9 +109,18 @@ a:hover {
   width: 600px;
 
   -webkit-animation: pulse 2s linear 0s infinite alternate;
-     -moz-animation: pulse 2s linear 0s infinite alternate;
-       -o-animation: pulse 2s linear 0s infinite alternate;
-          animation: pulse 2s linear 0s infinite alternate;
+  -moz-animation: pulse 2s linear 0s infinite alternate;
+  -o-animation: pulse 2s linear 0s infinite alternate;
+  animation: pulse 2s linear 0s infinite alternate;
+}
+
+.circle.nav {
+    height: 25px;
+    left: 40px;
+    margin-top: 0;
+    position: fixed;
+    top: 10px;
+    width: 25px;
 }
 
 .content {
@@ -91,6 +128,10 @@ a:hover {
   position: absolute;
   top: 275px;
   width: 100%;
+}
+
+.content_list li {
+  padding: 10px 0;
 }
 
 .content_social {
@@ -115,9 +156,9 @@ a:hover {
   letter-spacing: 10px;
 
   -webkit-animation: blur-pulse 2s linear 0s infinite alternate;
-     -moz-animation: blur-pulse 2s linear 0s infinite alternate;
-       -o-animation: blur-pulse 2s linear 0s infinite alternate;
-          animation: blur-pulse 2s linear 0s infinite alternate;
+  -moz-animation: blur-pulse 2s linear 0s infinite alternate;
+  -o-animation: blur-pulse 2s linear 0s infinite alternate;
+  animation: blur-pulse 2s linear 0s infinite alternate;
 }
 
 .wrapper {
@@ -130,14 +171,14 @@ a:hover {
 }
 
 @-webkit-keyframes pulse { from { -webkit-transform: scale(1);  } to { -webkit-transform: scale(.97); -webkit-box-shadow: 1px 1px 20px #00bcd4; }  }
-   @-moz-keyframes pulse { from { -moz-transform: scale(1);     } to { -moz-transform: scale(.97); -moz-box-shadow: 1px 1px 20px #00bcd4; }     }
-     @-o-keyframes pulse { from { -o-transform: scale(1);       } to { -o-transform: scale(.97); -o-box-shadow: 1px 1px 20px #00bcd4; }       }
-        @keyframes pulse { from { transform: scale(1);          } to { transform: scale(.97); box-shadow: 1px 1px 20px #00bcd4; }            }
+@-moz-keyframes pulse { from { -moz-transform: scale(1);     } to { -moz-transform: scale(.97); -moz-box-shadow: 1px 1px 20px #00bcd4; }     }
+@-o-keyframes pulse { from { -o-transform: scale(1);       } to { -o-transform: scale(.97); -o-box-shadow: 1px 1px 20px #00bcd4; }       }
+@keyframes pulse { from { transform: scale(1);          } to { transform: scale(.97); box-shadow: 1px 1px 20px #00bcd4; }            }
 
 @-webkit-keyframes blur-pulse { from { -webkit-filter: blur(0);  } to { -webkit-filter: blur(2px); }  }
-   @-moz-keyframes blur-pulse { from { -moz-filter: blur(0);     } to { -moz-filter: blur(2px);  }     }
-     @-o-keyframes blur-pulse { from { -o-filter: blur(0);       } to { -o-filter: blur(2px);  }       }
-        @keyframes blur-pulse { from { filter: blur(0);          } to { filter: blur(2px);  }            }
+@-moz-keyframes blur-pulse { from { -moz-filter: blur(0);     } to { -moz-filter: blur(2px);  }     }
+@-o-keyframes blur-pulse { from { -o-filter: blur(0);       } to { -o-filter: blur(2px);  }       }
+@keyframes blur-pulse { from { filter: blur(0);          } to { filter: blur(2px);  }            }
 
 /* IPhone Portrait */
 @media screen and (max-width : 320px) {
