@@ -179,6 +179,24 @@ section {
   width: 600px;  
 }
 
+.left {
+  float: left;
+  margin-right: 20px;
+  text-align: left;
+  width: 35%;
+}
+
+.left p {
+  color: #999;
+  letter-spacing: 1px;
+  text-transform: none;
+}
+
+.right {
+  float: right;
+  width: 60%;
+}
+
 @-webkit-keyframes pulse { from { -webkit-transform: scale(1);  } to { -webkit-transform: scale(.97); -webkit-box-shadow: 1px 1px 20px #00bcd4; }  }
 @-moz-keyframes pulse { from { -moz-transform: scale(1);     } to { -moz-transform: scale(.97); -moz-box-shadow: 1px 1px 20px #00bcd4; }     }
 @-o-keyframes pulse { from { -o-transform: scale(1);       } to { -o-transform: scale(.97); -o-box-shadow: 1px 1px 20px #00bcd4; }       }
@@ -246,5 +264,10 @@ section {
 
   .wrapper {
     width: 100%;
+  }
+
+  .left, .right {
+    float: none;
+    width: 100%
   }
 }
